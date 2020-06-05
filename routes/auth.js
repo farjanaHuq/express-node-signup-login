@@ -1,5 +1,3 @@
-// routes/auth.js
-
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
@@ -40,6 +38,7 @@ router.get('/logout', (req, res) => {
   if (port !== undefined && port !== 80 && port !== 443) {
     returnTo += ':' + port;
   }
+
   var logoutURL = new url.URL(
     util.format('https://%s/v2/logout', process.env.AUTH0_DOMAIN)
   );
