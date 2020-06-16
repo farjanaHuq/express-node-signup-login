@@ -11,6 +11,9 @@ var userInViews = require('./lib/middleware/userInViews');
 var authRouter = require('./routes/auth');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+//To setup HTML ss view engine
+var cons = require('consolidate');
+
 
 dotenv.config();
 
@@ -43,10 +46,15 @@ passport.deserializeUser(function (user, done) {
 });
 
 const app = express();
+// view engine setup
+app.engine('html', cons.swig);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
 
 // View engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'pug');
+
 
 app.use(logger('dev'));
 app.use(cookieParser());
@@ -79,6 +87,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(flash());
+
 
 // Handle auth failure error messages
 app.use(function (req, res, next) {
