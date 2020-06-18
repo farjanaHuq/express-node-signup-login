@@ -91,11 +91,18 @@
     </header>
     
     <script type = 'text/JavaScript'>
-    // $('#btn-login').click(function(e){
-    //     e.preventDefault();
-    //     console.log('login');
-    //     console.log(locals.user);
-    // })
+   
+    $('#btn-login').click(function(e){
+        e.preventDefault();
+        console.log('login');
+     axios.post('/login', {
+            
+     })
+     .then(function (response) {
+         console.log(response);
+     });
+      
+    })
     
     </script>    
     </body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <title>user</title>
+   
+  </head>
+  <body>
+      <div>User looged in.</div>
+      <div id="user">
+   
+    <script type="text/javascript">
+      $(document).ready(function () {;
+
+        // var token = localStorage.getItem("token");
+        // console.log("token:", token);
+        console.log("hello");
+       
+        axios.get("/user", {
+            // id:"auth0|5ed9bd43a36eb200197730e9"
+        }).then(function (response) {
+            $('#user').append(response);
+          console.log(response);
+        });
+      });
+    </script>
+  </body>
+</html>

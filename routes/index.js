@@ -7,4 +7,9 @@ router.get('/', function (req, res, next) {
   // res.sendFile(path.join(__dirname, '../views/home.himl'));
 });
 
+router.get('/profile', function (req, res, next) {
+  res.render('profile', { title: 'My Profile' });
+  // res.sendFile(path.join(__dirname, '../views/home.himl'));
+});
+
 module.exports = router;
