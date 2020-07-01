@@ -7,9 +7,10 @@
 .card{
     height: 400px;
 }
-/* .card-image{
+.card-image{
     height: 200px;
-} */
+    width : 200px;
+}
 .card-title{
     font-weight: bold;
     font-size: 10px;
